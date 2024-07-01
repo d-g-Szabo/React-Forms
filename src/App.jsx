@@ -12,6 +12,7 @@ import TimerClean from "./components/TimerClean";
 import useTimer from "./components/useTimer";
 // import WorkShopTimer from "./components/WorkShopTimer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PageNotFound from "./components/PageNotFound";
 
 // destructuring and importing the burgers array from burgerData.js
 
@@ -41,6 +42,7 @@ export default function App() {
     <BrowserRouter>
       <Header />
       <Routes>
+        <Route path="/" element={<h1>Home</h1>}></Route>
         <Route
           path="/timer"
           element={
@@ -96,6 +98,7 @@ export default function App() {
             </>
           }
         ></Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
